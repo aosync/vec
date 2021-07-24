@@ -48,6 +48,8 @@ struct vec_header *_vec_ensure_size(struct vec_header *, int);
 		memcpy(a + _vec_header(a)->len, b, _vec_header(b)->len * _vec_header(b)->el_size), \
                        _vec_header(a)->len += _vec_header(b)->len)
 
+#define vec_len(x) (_vec_header(x)->len)
+
 #define vec_empty(x) (_vec_header(x)->len = 0,	\
                       x = _vec(_vec_ensure_size(_vec_header(x), 0)))
 
