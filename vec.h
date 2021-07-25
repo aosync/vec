@@ -36,8 +36,8 @@ struct vec_header *_vec_ensure_size(struct vec_header *, int);
 #define concat(a, b) _concat(a, b)
 #define macro_var(name) concat(name, __LINE__)
 
-#define vec_new(T) _vec_new(sizeof(T), vec_std_allocator);
-#define vec_new_with(T, a) _vec_new(sizeof(T), a);
+#define vec_new(T) _vec_new(sizeof(T), vec_std_allocator)
+#define vec_new_with(T, a) _vec_new(sizeof(T), a)
 #define vec_push(x, y) (x = _vec(_vec_ensure_size(_vec_header(x), 1)),  \
                         (x)[_vec_header(x)->len++] = (y))
 
